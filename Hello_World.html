@@ -2,35 +2,42 @@
 <html ng-app="store">
 <head>
 	<title>Hello World</title>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	
 </head>
 <body>
-	<div>
-		<label>Name:</label>
-		<input type="text" ng-model="yourName" placeholder="Enter a name here">
-		<hr>
-		<h1>Hello {{yourName}}!</h1>
-		<div ng-controller="StoreController as store">
-			<h1>{{store.product.name}}</h1>
-			<p>{{store.product.price}}</p>
+	<div class="container">
+		<br>
+		<div>
+			<label>Name:</label>
+			<input type="text" ng-model="yourName" placeholder="Enter a name here">
+			<hr>
+			<h1>Hello {{yourName}}!</h1>
+			<div ng-controller="StoreController as store">
+				<h1>{{store.product.name}}</h1>
+				<p>{{store.product.price}}</p>
+			</div>
+		</div>
+
+		<div>
+			<p id="textOne">Cool</p>
+			<button class="btn btn-primary" onclick="changeText()">Click Me</button>
+		</div>
+
+		<div>
+			<p>Some paragraph text</p>
+	    <h1>some heading 1 text</h1>
+	    <h2>some heading 2 text</h2>
+
+	    <a href="#" id="size-12">12</a>
+	    <a href="#" id="size-14">14</a>
+	    <a href="#" id="size-16">16</a>
 		</div>
 	</div>
 
-	<div>
-		<p id="textOne">Cool</p>
-		<button onclick="changeText()">Click Me</button>
-	</div>
-
-	<div>
-		<p>Some paragraph text</p>
-    <h1>some heading 1 text</h1>
-    <h2>some heading 2 text</h2>
-
-    <a href="#" id="size-12">12</a>
-    <a href="#" id="size-14">14</a>
-    <a href="#" id="size-16">16</a>
-	</div>
-
 </body>
+<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 <script src="app.js"></script>
 </html>
