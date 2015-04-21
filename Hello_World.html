@@ -24,9 +24,9 @@
 				<div class="col-md-4" ng-repeat="product in store.products">
 					<div class="thumbnail" ng-hide="product.soldOut">
 						<img src="images/{{product.name}}.jpg" alt="{{product.name}}">
-						<div class="caption">
+						<div class="caption text-right">
 							<p>name: {{product.name}}</p>
-							<p>price: {{product.price}}</p>
+							<p>price: {{product.price | currency}}</p>
 							<p>canPurchase: {{product.canPurchase}}</p>
 							<p>soldOut: {{product.soldOut}}</p>
 							<button ng-show="product.canPurchase" class="btn btn-success">Buy Now</button>
@@ -38,6 +38,15 @@
 
 		<hr>
 		<br>
+
+		<div class="panel panel-warning" ng-controller="GemListController as gems">
+			<div class="panel-heading">List of Gems</div>
+			<div class="panel-body">
+				<ul class="list-group">
+					<li class="list-group-item" ng-repeat="gem in gems.gemlist | orderBy:'-'">{{gem}}</li>
+				</ul>
+			</div>
+		</div>
 
 		<div>
 			<label>Name:</label>

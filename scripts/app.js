@@ -1,5 +1,6 @@
 (function () {
 	var app = angular.module('store', []);
+	
 	var gems = [
 		{
 			name: 'ruby',
@@ -20,7 +21,17 @@
 			soldOut: false
 		}
 	];
+
 	app.controller('StoreController', function() {
 		this.products = gems;
 	});
+
+	var gemlist = [
+		'opal', 'diamond', 'topaz', 'rainbow', 'princess', 'heart'
+	];
+
+	app.controller('GemListController', function() {
+		this.gemlist = gemlist;
+	});
+	
 })();
