@@ -1,7 +1,7 @@
 <!doctype html>
 <html ng-app="store">
 <head>
-	<title>Hello World</title>
+	<title>Angular JavaScript</title>
 	<meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,21 +11,35 @@
 <body>
 	<div class="container">
 		<br>
+
+		<div ng-controller="StoreController as store">
+			<div class="jumbotron">
+				<h1>Welcome to the Store.</h1>
+			</div>
+			<h1>name: {{store.product.name}}</h1>
+			<p>price: {{store.product.price}}</p>
+		</div>
+
+		<hr>
+		<br>
+
 		<div>
 			<label>Name:</label>
 			<input type="text" ng-model="yourName" placeholder="Enter a name here">
 			<hr>
 			<h1>Hello {{yourName}}!</h1>
-			<div ng-controller="StoreController as store">
-				<h1>{{store.product.name}}</h1>
-				<p>{{store.product.price}}</p>
-			</div>
 		</div>
+
+		<hr>
+		<br>
 
 		<div>
 			<p id="textOne">Cool</p>
 			<button class="btn btn-primary" onclick="changeText()">Click Me</button>
 		</div>
+
+		<hr>
+		<br>
 
 		<div>
 			<p>Some paragraph text</p>
