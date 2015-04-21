@@ -12,17 +12,24 @@
 	<div class="container">
 		<br>
 
+		<div class="jumbotron">
+			<h1>Welcome to the Store.</h1>
+		</div>
+
+		<hr>
+		<br>
+
 		<div ng-controller="StoreController as store">
-			<div class="jumbotron">
-				<h1>Welcome to the Store.</h1>
-			</div>
 			<div class="row">
 				<div class="col-md-4">
-					<div class="thumbnail">
+					<div class="thumbnail" ng-hide="store.product.soldOut">
 						<img src="images/ruby.jpg" alt="ruby">
 						<div class="caption">
 							<p>name: {{store.product.name}}</p>
 							<p>price: {{store.product.price}}</p>
+							<p>canPurchase: {{store.product.canPurchase}}</p>
+							<p>soldOut: {{store.product.soldOut}}</p>
+							<button ng-show="store.product.canPurchase" class="btn btn-success">Buy Now</button>
 						</div>
 					</div>
 				</div>
@@ -91,4 +98,5 @@
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 <script src="scripts/app.js"></script>
+<script src="scripts/module_pattern.js"></script>
 </html>
