@@ -59,3 +59,32 @@ function changePet() {
 	var pet = createPet("Vivie");
 	$("petText").innerHTML = pet.getName();
 }
+
+function showDOM() {
+	var x = $("compositeText");
+	var y = x.getElementsByTagName("p");
+	alert(y[0].innerHTML);
+}
+
+var makeSentence = function() {
+	var sentence = "The default sentence";
+	function addWord(word) {
+		sentence += word;
+	}
+	return {
+		add: function(word) {
+			addWord(word);
+		},
+		subtract: function(word) {
+			alert('Subtracting');
+		},
+		get: function() {
+			return sentence;
+		}
+	}
+};
+
+var moduleButton = $('moduleButton');
+var sentence1 = makeSentence();
+sentence1.add("Hello");
+moduleButton.onclick = sentence1.subtract;
