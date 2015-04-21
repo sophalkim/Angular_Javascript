@@ -13,7 +13,7 @@
 		<br>
 
 		<div class="jumbotron">
-			<h1>Welcome to the Store.</h1>
+			<h1 class="text-center">Gems Galore</h1>
 		</div>
 
 		<hr>
@@ -21,15 +21,15 @@
 
 		<div ng-controller="StoreController as store">
 			<div class="row">
-				<div class="col-md-4">
-					<div class="thumbnail" ng-hide="store.product.soldOut">
-						<img src="images/ruby.jpg" alt="ruby">
+				<div class="col-md-4" ng-repeat="product in store.products">
+					<div class="thumbnail" ng-hide="product.soldOut">
+						<img src="images/{{product.name}}.jpg" alt="{{product.name}}">
 						<div class="caption">
-							<p>name: {{store.product.name}}</p>
-							<p>price: {{store.product.price}}</p>
-							<p>canPurchase: {{store.product.canPurchase}}</p>
-							<p>soldOut: {{store.product.soldOut}}</p>
-							<button ng-show="store.product.canPurchase" class="btn btn-success">Buy Now</button>
+							<p>name: {{product.name}}</p>
+							<p>price: {{product.price}}</p>
+							<p>canPurchase: {{product.canPurchase}}</p>
+							<p>soldOut: {{product.soldOut}}</p>
+							<button ng-show="product.canPurchase" class="btn btn-success">Buy Now</button>
 						</div>
 					</div>
 				</div>
