@@ -6,19 +6,22 @@
 			name: 'ruby',
 			price: 4.99,
 			canPurchase: true,
-			soldOut: false
+			soldOut: false,
+			image: "images/ruby.jpg"
 		},
 		{
 			name: 'emerald',
 			price: 3.99,
 			canPurchase: true,
-			soldOut: false
+			soldOut: false,
+			image: "images/emerald.jpg"
 		},
 		{
 			name: 'sapphire',
 			price: 5.45,
 			canPurchase: true,
-			soldOut: false
+			soldOut: false,
+			image: "images/sapphire.jpg"
 		}
 	];
 
@@ -33,5 +36,5 @@
 	app.controller('GemListController', function() {
 		this.gemlist = gemlist;
 	});
-	
+
 })();
