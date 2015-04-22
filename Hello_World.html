@@ -26,11 +26,38 @@
 					<div class="thumbnail" ng-hide="product.soldOut">
 						<img ng-src="{{product.image}}" alt="{{product.name}}">
 						<div class="caption text-right">
+							<!-- Product Information -->
 							<p>name: {{product.name}}</p>
 							<p>price: {{product.price | currency}}</p>
 							<p>canPurchase: {{product.canPurchase}}</p>
 							<p>soldOut: {{product.soldOut}}</p>
 							<button ng-show="product.canPurchase" class="btn btn-success">Buy Now</button>
+							<!-- Tab Information -->
+							<div ng-controller="TabController as tab">
+								<ul class="nav nav-pills">
+									<li ng-class="{ active:tab.isSet(1) }">
+										<a href ng-click="tab.setTab(1)">Description</a>
+									</li>
+									<li ng-class="{ active:tab.isSet(2) }">
+										<a href ng-click="tab.setTab(2)">Specs</a>
+									</li>
+									<li ng-class="{ active:tab.isSet(3) }">
+										<a href ng-click="tab.setTab(3)">Reviews</a>
+									</li>
+								</ul>
+								<div ng-show="tab.isSet(1)">
+									<h4>Description</h4>
+									<p>This is the description.</p>
+								</div>
+								<div ng-show="tab.isSet(2)">
+									<h4>Specs</h4>
+									<p>This is the specs.</p>
+								</div>
+								<div ng-show="tab.isSet(3)">
+									<h4>Reviews</h4>
+									<p>This is the reviews.</p>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -51,41 +78,14 @@
 
 		<hr>
 		<br>
-		<!-- Tab Information -->
-		<div ng-controller="TabController as tab">
-			<ul class="nav nav-pills">
-				<li ng-class="{ active:tab.isSet(1) }">
-					<a href ng-click="tab.setTab(1)">Description</a>
-				</li>
-				<li ng-class="{ active:tab.isSet(2) }">
-					<a href ng-click="tab.setTab(2)">Specs</a>
-				</li>
-				<li ng-class="{ active:tab.isSet(3) }">
-					<a href ng-click="tab.setTab(3)">Reviews</a>
-				</li>
-			</ul>
-			<div ng-show="tab.isSet(1)">
-				<h4>Description</h4>
-				<p>This is the description.</p>
-			</div>
-			<div ng-show="tab.isSet(2)">
-				<h4>Specs</h4>
-				<p>This is the specs.</p>
-			</div>
-			<div ng-show="tab.isSet(3)">
-				<h4>Reviews</h4>
-				<p>This is the reviews.</p>
-			</div>
-		</div>
-
-		<hr>
-		<br>
-
+		<!-- Interactive Form Input -->
 		<div>
 			<label>Name:</label>
 			<input type="text" ng-model="yourName" placeholder="Enter a name here">
+			<input type="text" ng-model="yourText" placeholder="Enter Text Here">
 			<hr>
 			<h1>Hello {{yourName}}!</h1>
+			<textarea>{{yourText}}</textarea>
 		</div>
 
 		<hr>
