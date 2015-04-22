@@ -5,6 +5,16 @@
 	app.controller('StoreController', function() {
 		this.products = gems;
 	});
+	// Review Controller
+	app.controller('ReviewController', function() {
+		this.review = {};
+
+		this.addReview = function(product){
+			this.review.createdOn = Date.now();
+			product.reviews.push(this.review);
+			this.review = {};
+		};
+	});
 	// Data for the Store Controller
 	var gems = [
 		{
