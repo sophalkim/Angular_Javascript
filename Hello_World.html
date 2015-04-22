@@ -78,6 +78,18 @@
 
 		<hr>
 		<br>
+		<!-- Groupon Api -->
+		<div class="panel panel-warning" ng-controller="GrouponController as grouponCtrl">
+			<div class="panel-heading">Groupon Api Products</div>
+			<div class="panel-body">
+				<ul class="list-group">
+					<li class="list-group-item" ng-repeat="product in grouponCtrl.store.products | orderBy:'-'">{{product}}</li>
+				</ul>
+			</div>
+		</div>
+
+		<hr>
+		<br>
 		<!-- List of Gems -->
 		<div class="panel panel-warning" ng-controller="GemListController as gems">
 			<div class="panel-heading">List of Gems</div>
