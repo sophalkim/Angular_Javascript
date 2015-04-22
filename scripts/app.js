@@ -15,11 +15,19 @@
 			this.review = {};
 		};
 	});
-	// <product-information>
+	// <product-information> directive
 	app.directive('productInformation', function() {
 		return {
 			restrict: 'E',
 			templateUrl: 'partials/product_information.html'
+		};
+	});
+
+	// <module-pattern> directive
+	app.directive('modulePattern', function() {
+		return {
+			restrict: 'E',
+			templateUrl: 'partials/module_pattern.html'
 		};
 	});
 	// Data for the Store Controller
