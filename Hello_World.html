@@ -1,15 +1,16 @@
 <!doctype html>
-<html ng-app="store">
+<html ng-app="store" lang="en">
 <head>
 	<title>Angular JavaScript</title>
 	<meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/angular_javascript.css">
 	
 </head>
 <body>
-	<div class="container">
+	<div class="container-fluid">
 		<br>
 
 		<div class="jumbotron">
@@ -18,7 +19,7 @@
 
 		<hr>
 		<br>
-
+		<!-- Gems Products and Images -->
 		<div ng-controller="StoreController as store">
 			<div class="row">
 				<div class="col-md-4" ng-repeat="product in store.products">
@@ -38,7 +39,7 @@
 
 		<hr>
 		<br>
-
+		<!-- List of Gems -->
 		<div class="panel panel-warning" ng-controller="GemListController as gems">
 			<div class="panel-heading">List of Gems</div>
 			<div class="panel-body">
@@ -47,6 +48,38 @@
 				</ul>
 			</div>
 		</div>
+
+		<hr>
+		<br>
+		<!-- Tab Information -->
+		<div ng-controller="TabController as tab">
+			<ul class="nav nav-pills">
+				<li ng-class="{ active:tab.isSet(1) }">
+					<a href ng-click="tab.setTab(1)">Description</a>
+				</li>
+				<li ng-class="{ active:tab.isSet(2) }">
+					<a href ng-click="tab.setTab(2)">Specs</a>
+				</li>
+				<li ng-class="{ active:tab.isSet(3) }">
+					<a href ng-click="tab.setTab(3)">Reviews</a>
+				</li>
+			</ul>
+			<div ng-show="tab.isSet(1)">
+				<h4>Description</h4>
+				<p>This is the description.</p>
+			</div>
+			<div ng-show="tab.isSet(2)">
+				<h4>Specs</h4>
+				<p>This is the specs.</p>
+			</div>
+			<div ng-show="tab.isSet(3)">
+				<h4>Reviews</h4>
+				<p>This is the reviews.</p>
+			</div>
+		</div>
+
+		<hr>
+		<br>
 
 		<div>
 			<label>Name:</label>
