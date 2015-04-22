@@ -27,10 +27,11 @@
 						<img ng-src="{{product.image}}" alt="{{product.name}}">
 						<div class="caption text-right">
 							<!-- Product Information -->
-							<p>name: {{product.name}}</p>
+							<!-- <p>name: {{product.name}}</p>
 							<p>price: {{product.price | currency}}</p>
 							<p>canPurchase: {{product.canPurchase}}</p>
-							<p>soldOut: {{product.soldOut}}</p>
+							<p>soldOut: {{product.soldOut}}</p> -->
+							<product-information></product-information>
 							<button ng-show="product.canPurchase" class="btn btn-success">Buy Now</button>
 							<!-- Tab Information -->
 							<div ng-controller="TabController as tab">
@@ -70,6 +71,7 @@
 										</li>
 									</ul>
 									<!-- Review Form -->
+									<!-- For some reason, the ng-submit function is here instead of with the button down below -->
 									<form name="reviewForm" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewCtrl.addReview(product)"novalidate>
 										<!-- Live Preview -->
 										<blockquote>

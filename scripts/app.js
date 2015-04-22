@@ -15,6 +15,13 @@
 			this.review = {};
 		};
 	});
+	// <product-information>
+	app.directive('productInformation', function() {
+		return {
+			restrict: 'E',
+			templateUrl: 'partials/product_information.html'
+		};
+	});
 	// Data for the Store Controller
 	var gems = [
 		{
