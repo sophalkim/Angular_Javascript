@@ -30,6 +30,23 @@
 			templateUrl: 'partials/module_pattern.html'
 		};
 	});
+	// <form-partial> directive including review controller
+	app.directive('formPartial', function() {
+		return {
+			restrict: 'E',
+			templuateUrl: 'partials/form_partial.html',
+			controller: function() {
+				this.review = {};
+
+				this.addReview = function(product){
+					this.review.createdOn = Date.now();
+					product.reviews.push(this.review);
+					this.review = {};
+				};
+			},
+			controllerAs: 'reviewCtrl'
+		};
+	});
 	// Data for the Store Controller
 	var gems = [
 		{
