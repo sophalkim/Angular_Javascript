@@ -1,3 +1,4 @@
+
 function $(id) {
 	return document.getElementById(id);
 }
@@ -41,12 +42,11 @@ var createPet = function(name) {
 				sex = newSex;
 			}
 		}
-	}
-}
+	};
+};
 
 function changePet() {
-	var pet = createPet("Vivie");
-	$("petText").innerHTML = pet.getName();
+	$('petText').innerHTML = "Carl";
 }
 
 function showDOM() {
@@ -70,7 +70,7 @@ var makeSentence = function() {
 		get: function() {
 			return sentence;
 		}
-	}
+	};
 };
 
 var moduleButton = $('moduleButton');

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html ng-app="store" lang="en">
+   <head>
+       <title>Angular Javascript</title>
+       <meta charset="utf-8"/>
+       <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+       <meta name="viewport" content="width=device-width, initial-scale=1"/>
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+       <link rel="stylesheet" href="css/angular_javascript.css">
+   </head>
+   
+   <body>
+       <div class="container-fluid">
+           <br>
+           
+           <div class="jumbotron">
+               <h1 class="text-center">Gems Galore</h1>
+           </div>
+           
+           <hr>
+           <br>
+           
+           <!-- Gems Product and Images -->
+           <div ng-controller="StoreController as store">
+               <div class="row">
+                   <div class="thumbnail" ng-hide="product.soldOut">
+                       <img ng-src="{{product.image}}" alt="{{product.name}}">
+                       <div class="caption text-right">
+                           <!-- Product Information -->
+                           <product-information></product-information>
+                           <button ng-show="product.canPurchase" class="btn btn-success">Buy Now</button>
+                           <!-- Tab Information -->
+                           <div ng-controller="TabController as tab">
+                               <!-- Tabs -->
+                               <ul class="nav nav-tabs nav-justified">
+                                   <li ng-class="{ active:tab.isSet(1)}">
+                                       <a href ng-click="tab.setTab(1)" id="productTabs">Description</a>
+                                   </li>
+                                   <li ng-class="{ active:tab.isSet(2)}">
+                                       <a href ng-click="tab.setTab(2)" id="productTabs">Specs</a>
+                                   </li>
+                                   <li ng-class="{ active:tab.isSet(3)}">
+                                       <a href ng-click="tab.setTab(3)" id="productTabs">Reviews</a>
+                                   </li>
+                               </ul>
+                               <!-- Description Tab -->
+                               <div ng-show="tab.isSet(1)">
+                                   <h4>Description</h4>
+                                   <p>This is the description</p>
+                               </div>
+                               <!-- Specs Tab -->
+                                <div ng-show="tab.isSet(2)">
+                                    <h4>Specs</h4>
+                                    <p>This is the specs.</p>
+                                </div>
+                                <!-- Review Tab -->
+                                <div ng-show="tab.isSet(3)">
+                                    <!-- List of Reviews -->
+                                    <ul>
+                                        <h4>Reviews</h4>
+                                        <li ng-repeat="review in product.reviews">
+                                            <blockquote>
+                                                <strong>{{review.stars}} Stars </strong>
+                                                {{review.body}}
+                                                <cite class="clearfix">-{{review.author}}</cite>
+                                            </blockquote>
+                                        </li>
+                                    </ul>
+                                    <!-- Review Form -->
+                                    <form-partial></form-partial>
+                                </div>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </body>
+   <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="scripts/app.js"></script>
+</html>

@@ -16,13 +16,13 @@
 		};
 	});
 	// Groupon Controller
-	app.controller('GrouponController', ['$http', function($http) {
-		var store = this;
-		store.products = ['loading', 'loading', 'loading'];
-		$http.get('http://groupon-api.herokuapp.com/products.json').success(function(data){
-			store.products = data;
-		});
-	}]);
+	// app.controller('GrouponController', ['$http', function($http) {
+		// var store = this;
+		// store.products = ['loading', 'loading', 'loading'];
+		// $http.get('http://groupon-api.herokuapp.com/products.json').success(function(data){
+			// store.products = data;
+		// });
+	// }]);
 	
 	// Data for the Store Controller
 	var gems = [
